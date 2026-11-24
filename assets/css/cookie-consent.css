@@ -1,0 +1,88 @@
+/* Volton cookie consent - centered modal, aligned with the website palette */
+.volton-legal-footer-links { display:flex; flex-wrap:wrap; gap:10px 22px; list-style:none; margin:0; padding:0; }
+.volton-legal-footer-links li { margin:0; }
+.volton-cookie-banner, .volton-cookie-modal { font-family: inherit; }
+.volton-cookie-banner {
+  position:fixed; z-index:99990; inset:0; width:100%; height:100%; max-width:none; margin:0;
+  padding:22px; border:0; border-radius:0; box-shadow:none; background:rgba(31,31,37,.66);
+  display:none; align-items:center; justify-content:center; overflow-y:auto;
+}
+.volton-cookie-banner.is-visible { display:flex; animation:voltonCookieFade .2s ease-out; }
+.volton-cookie-banner__card {
+  position:relative; width:min(100%,620px); padding:30px 32px; background:#fff; color:#1f1f25;
+  border:1px solid rgba(31,31,37,.10); border-top:4px solid #4aab3d; border-radius:8px;
+  box-shadow:0 22px 70px rgba(0,0,0,.28);
+}
+.volton-cookie-banner__close {
+  position:absolute; top:12px; right:12px; z-index:2;
+  width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:50%; padding:0;
+}
+.volton-cookie-banner__close:hover { background:#f0f0f0; }
+.volton-cookie-banner__top { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }
+.volton-cookie-banner h3 { margin:0 0 10px; padding-right:42px; color:#1f1f25; font-size:22px; line-height:1.3; font-weight:700; }
+.volton-cookie-banner p { margin:0; color:#55565c; font-size:14px; line-height:1.7; }
+.volton-cookie-banner__actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:22px; }
+.volton-cookie-btn {
+  appearance:none; border:1px solid #4aab3d; border-radius:4px; padding:11px 17px;
+  font:600 13px/1.3 inherit; cursor:pointer; transition:all .2s ease;
+}
+.volton-cookie-btn--primary { background:#4aab3d; color:#fff; }
+.volton-cookie-btn--primary:hover { background:#3a8a2d; border-color:#3a8a2d; }
+.volton-cookie-btn--secondary { background:#fff; color:#1f1f25; border-color:#1f1f25; }
+.volton-cookie-btn--secondary:hover { background:#f7f7f7; }
+.volton-cookie-link { color:#1f1f25; text-decoration:underline; font-size:13px; font-weight:600; border:0; background:transparent; cursor:pointer; padding:8px 2px; }
+.volton-cookie-link:hover { color:#4aab3d; }
+.volton-cookie-modal-backdrop {
+  position:fixed; inset:0; z-index:99998; display:none; align-items:center; justify-content:center;
+  padding:20px; background:rgba(31,31,37,.66);
+}
+.volton-cookie-modal-backdrop.is-visible { display:flex; }
+.volton-cookie-modal {
+  position:relative;
+  width:min(100%,560px); max-height:min(90vh,760px); overflow:auto;
+  padding:26px; background:#fff; color:#1f1f25; border-radius:8px; border-top:4px solid #4aab3d;
+  box-shadow:0 20px 70px rgba(0,0,0,.3);
+}
+.volton-cookie-modal h3 { margin:0 0 8px; color:#1f1f25; font-size:22px; }
+.volton-cookie-modal > div:first-child {
+  position:sticky; top:-26px; z-index:3;
+  margin:-26px -26px 12px; padding:26px 26px 12px;
+  background:#fff;
+}
+.volton-cookie-modal > p { color:#55565c; font-size:14px; line-height:1.6; margin:0 0 18px; }
+.volton-cookie-category { display:flex; justify-content:space-between; gap:20px; padding:15px 0; border-top:1px solid #e8e8e8; }
+.volton-cookie-category strong { display:block; color:#1f1f25; font-size:14px; margin-bottom:4px; }
+.volton-cookie-category small { display:block; color:#66676c; font-size:12px; line-height:1.5; }
+.volton-cookie-category input { width:18px; height:18px; accent-color:#4aab3d; flex:0 0 auto; margin-top:3px; }
+.volton-cookie-category .always-on { color:#4aab3d; font-size:12px; font-weight:700; white-space:nowrap; }
+.volton-cookie-modal__actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.volton-cookie-close { border:0; background:transparent; color:#1f1f25; font-size:22px; line-height:1; cursor:pointer; padding:2px 5px; }
+.volton-cookie-modal > div:first-child > [data-cookie-close] {
+  margin-left:auto;
+  width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:50%; padding:0;
+}
+.volton-cookie-modal > div:first-child > [data-cookie-close]:hover { background:#f0f0f0; }
+.volton-policy-content { max-width:900px; margin:0 auto; padding:70px 20px 90px; min-height:360px; }
+.volton-policy-content h1 { color:#1f1f25; margin:0 0 22px; font-family:inherit; font-size:clamp(30px,3vw,42px); font-weight:700; line-height:1.2; }
+.volton-policy-content .volton-policy-pending { padding:22px 25px; background:#f7f7f7; border-left:3px solid #4aab3d; color:#55565c; line-height:1.7; }
+.volton-policy-content .volton-manage-cookies { display:inline-block; margin-top:18px; color:#1f1f25; text-decoration:underline; font-weight:600; cursor:pointer; }
+.emailjs-form-status { display:none; margin:0 0 18px; padding:12px 15px; border-radius:5px; font-size:14px; }
+.emailjs-form-status.is-visible { display:block; }
+.emailjs-form-status.is-success { background:#eaf6ef; color:#21643d; }
+.emailjs-form-status.is-error { background:#fff0ef; color:#a12d25; }
+.emailjs-form-status.is-info { background:#f7f7f7; color:#1f1f25; }
+@keyframes voltonCookieFade { from { opacity:0; } to { opacity:1; } }
+@media (max-width:767px) {
+  .volton-cookie-banner { padding:14px; }
+  .volton-cookie-banner__card { padding:23px 20px; }
+  .volton-cookie-banner h3 { font-size:19px; }
+  .volton-cookie-banner__actions { display:grid; grid-template-columns:1fr; }
+  .volton-cookie-btn { width:100%; }
+  .volton-cookie-modal { padding:21px; }
+  .volton-cookie-modal > div:first-child {
+    top:-21px; margin:-21px -21px 12px; padding:21px 21px 12px;
+  }
+  .volton-legal-footer-links { gap:9px 16px; }
+}
