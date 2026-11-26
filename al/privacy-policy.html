@@ -226,7 +226,22 @@
     <!-- policy content: final approved document text will be inserted here -->
     <main class="volton-policy-content">
       <h1>Politika e Privatësisë</h1>
-      <div class="volton-policy-pending">Përmbajtja e dokumentit do të shtohet pasi të konfirmohet versioni përfundimtar.</div>
+      <style>
+  .volton-policy-content,
+  .volton-policy-content * {
+    color: #000 !important;
+  }
+</style>
+      <div id="policy-content"></div>
+<script>
+fetch('../documents/privacy-policy.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('policy-content').innerHTML = html;
+    })
+    .catch(error => console.error(error));
+</script>
+
     </main>
 
     <!-- mobile menu -->
